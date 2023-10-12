@@ -178,11 +178,11 @@ document.querySelector('.js-moves').innerHTML = `You <img src="${playerMove}.PNG
 
 function updateScoreElement(){
 document.querySelector('.js-score').innerHTML = `plays: ${score.plays}, wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`;
-if(score.wins === 5 && score.plays <= 15){alert('Congrats! You won ☕️☕️  with Ningwa. Screenshot this pop up and send to Ningwa');
+if(score.wins === 5 && score.plays <= 10){alert('Congrats! You won ☕️☕️  with Ningwa. Screenshot this pop up and send to Ningwa');
 resetScore();
 }
-else if(score.wins < 5 && score.plays === 15){
-alert('Sorry! its not your day');
+else if(score.wins < 5 && score.plays === 10){
+alert('Sorry!its not your day😢');
 resetScore();
 }
 }

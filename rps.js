@@ -49,7 +49,7 @@ autoPlay();
 });
 
 document.querySelector('.js-rock-button').addEventListener('click', () => {
-document.querySelector('.js-rock-button').innerHTML = 'tossing';
+document.querySelector('.js-rock-button').innerHTML = 'COOKING RESULT😸';
 setTimeout(function(){
 playGame('rock');
 document.querySelector('.js-rock-button').innerHTML = `<img src="rock.PNG" class="move-icon">`;
@@ -57,7 +57,7 @@ document.querySelector('.js-rock-button').innerHTML = `<img src="rock.PNG" class
 });
 
 document.querySelector('.js-paper-button').addEventListener('click', () => {
-document.querySelector('.js-paper-button').innerHTML = 'tossing';
+document.querySelector('.js-paper-button').innerHTML = 'COOKING RESULT😸';
 setTimeout(function(){
 playGame('paper');
 document.querySelector('.js-paper-button').innerHTML = `<img src="paper.PNG" class="move-icon">`;
@@ -65,7 +65,7 @@ document.querySelector('.js-paper-button').innerHTML = `<img src="paper.PNG" cla
 });
 
 document.querySelector('.js-scissors-button').addEventListener('click', () => {
-document.querySelector('.js-scissors-button').innerHTML = 'tossing';
+document.querySelector('.js-scissors-button').innerHTML = 'COOKING RESULT😸';
 setTimeout(function(){
 playGame('scissors');
 document.querySelector('.js-scissors-button').innerHTML = `<img src="scissors.PNG" class="move-icon">`;

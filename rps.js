@@ -182,7 +182,7 @@ if(score.wins === 5 && score.plays <= 10){alert('Congrats! You won ☕️☕️ 
 resetScore();
 }
 else if(score.wins < 5 && score.plays === 10){
-alert('Sorry!its not your day😢');
+alert('Sorry! Not your Day😢');
 resetScore();
 }
 }

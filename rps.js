@@ -1,4 +1,4 @@
-/* objects */
+ /* objects */
     
      let score = JSON.parse(localStorage.getItem('score')) ||  {
  plays: 0,
@@ -47,29 +47,32 @@ document.querySelector('.js-auto-play-button')
 .addEventListener('click', () => {
 autoPlay();
 });
-
+  // rock button
 document.querySelector('.js-rock-button').addEventListener('click', () => {
-document.querySelector('.js-rock-button').innerHTML = 'RESULT COOKING😸';
+display1();
 setTimeout(function(){
+clearInterval(intervalId2);
 playGame('rock');
 document.querySelector('.js-rock-button').innerHTML = `<img src="rock.PNG" class="move-icon">`;
-}, 1000);
+}, 2000);
 });
-
+ 	//paper button
 document.querySelector('.js-paper-button').addEventListener('click', () => {
-document.querySelector('.js-paper-button').innerHTML = 'RESULT COOKING😸';
+display2();
 setTimeout(function(){
+clearInterval(intervalId3);
 playGame('paper');
 document.querySelector('.js-paper-button').innerHTML = `<img src="paper.PNG" class="move-icon">`;
-}, 1000);
+}, 2000);
 });
-
+	// scissors button
 document.querySelector('.js-scissors-button').addEventListener('click', () => {
-document.querySelector('.js-scissors-button').innerHTML = 'RESULT COOKING😸';
+display3();
 setTimeout(function(){
+clearInterval(intervalId4);
 playGame('scissors');
 document.querySelector('.js-scissors-button').innerHTML = `<img src="scissors.PNG" class="move-icon">`;
-}, 1000);
+}, 2000);
 });
 
 	document.body.addEventListener('keydown', (event) => {
@@ -178,11 +181,11 @@ document.querySelector('.js-moves').innerHTML = `You <img src="${playerMove}.PNG
 
 function updateScoreElement(){
 document.querySelector('.js-score').innerHTML = `plays: ${score.plays}, wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`;
-if(score.wins === 5 && score.plays <= 10){alert('Congrats! You won ☕️☕️  with Ningwa. Screenshot this pop up and send to Ningwa');
+if(score.wins === 5 && score.plays <= 15){alert(`Congrats! You won ☕️☕️  with Ningwa. Screenshot this pop up and send to Ningwa`);
 resetScore();
 }
-else if(score.wins < 5 && score.plays === 10){
-alert('Sorry! Not your Day😢');
+else if(score.wins < 5 && score.plays === 15){
+alert('Sorry! its not your day');
 resetScore();
 }
 }
@@ -248,4 +251,72 @@ function hideResetConfirmation(){
  document.querySelector('.js-reset-confirmation').innerHTML = '';
 
      }
+
+ //show tossing for rock button
+  let intervalId2;
+  function display1(){
+  intervalId2 = setInterval(() => {
+    if(document.querySelector('.js-rock-button').innerHTML === `<img src="rock.PNG" class="move-icon">`)
+	{	
+	document.querySelector('.js-rock-button').innerHTML = `<img src="paper.PNG" class="move-icon">`;
+	}
+      
+else if(document.querySelector('.js-rock-button').innerHTML === `<img src="paper.PNG" class="move-icon">` )
+	{	
+	document.querySelector('.js-rock-button').innerHTML = `<img src="scissors.PNG" class="move-icon">`;
+	}
+
+else if(document.querySelector('.js-rock-button').innerHTML === `<img src="scissors.PNG" class="move-icon">` )
+	{	
+	document.querySelector('.js-rock-button').innerHTML = `<img src="rock.PNG" class="move-icon">`;
+	}
+
+}, 150);
+		}
+
+	//tossing for paper Button
+	let intervalId3;
+  function display2(){
+  intervalId3 = setInterval(() => {
+    if(document.querySelector('.js-paper-button').innerHTML === `<img src="paper.PNG" class="move-icon">`)
+	{	
+	document.querySelector('.js-paper-button').innerHTML = `<img src="scissors.PNG" class="move-icon">`;
+	}
+      
+else if(document.querySelector('.js-paper-button').innerHTML === `<img src="scissors.PNG" class="move-icon">` )
+	{	
+	document.querySelector('.js-paper-button').innerHTML = `<img src="rock.PNG" class="move-icon">`;
+	}
+
+else if(document.querySelector('.js-paper-button').innerHTML === `<img src="rock.PNG" class="move-icon">` )
+	{	
+	document.querySelector('.js-paper-button').innerHTML = `<img src="paper.PNG" class="move-icon">`;
+	}
+
+}, 150);
+		}
+		
+		//tossing for scissors Button
+		let intervalId4;
+  function display3(){
+  intervalId4 = setInterval(() => {
+    if(document.querySelector('.js-scissors-button').innerHTML === `<img src="scissors.PNG" class="move-icon">`)
+	{	
+	document.querySelector('.js-scissors-button').innerHTML = `<img src="rock.PNG" class="move-icon">`;
+	}
+      
+else if(document.querySelector('.js-scissors-button').innerHTML === `<img src="rock.PNG" class="move-icon">` )
+	{	
+	document.querySelector('.js-scissors-button').innerHTML = `<img src="paper.PNG" class="move-icon">`;
+	}
+
+else if(document.querySelector('.js-scissors-button').innerHTML === `<img src="paper.PNG" class="move-icon">` )
+	{	
+	document.querySelector('.js-scissors-button').innerHTML = `<img src="scissors.PNG" class="move-icon">`;
+	}
+
+
+}, 150);
+}
+    
 
